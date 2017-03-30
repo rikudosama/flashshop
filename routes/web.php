@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home_path');
-Route::get('/shirts', 'HomeController@shirts')->name('shirts_path');
-Route::get('/shirt', 'HomeController@shirt')->name('shirt_path');
+Route::get('/', 'FrontController@index')->name('home_path');
+Route::get('/shirts', 'FrontController@shirts')->name('shirts_path');
+Route::get('/shirt', 'FrontController@shirt')->name('shirt_path');
+
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout_path');
+
+Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function() {
+    Route::get('/', function() {
+        return view('admin.index');
+    })->name('admin.index');
+    Route::resource('/product', 'ProductsController');
+    Route::resource('/category', 'CategoriesController');
+});
