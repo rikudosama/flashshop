@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 {{Form::label('category_id','Categories')}}
-                {{Form::select('category_id',[1=>'men'], null, array('class'=>'form-control', 'placeholder'=>'Select categories'))}}
+                {{Form::select('category_id', $categories, null, array('class'=>'form-control', 'placeholder'=>'Select categories'))}}
             </div>
             <div class="form-group">
                 {{Form::label('image','Image')}}
