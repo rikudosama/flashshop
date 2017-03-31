@@ -23,6 +23,8 @@
 
 <!-- Latest SHirts -->
 <div class="row">
+@forelse($shirts->chunk(4) as $shirt_list)
+  @foreach($shirt_list as $shirt)
     <div class="small-3 columns">
         <div class="item-wrapper">
             <div class="img-wrapper">
@@ -30,93 +32,26 @@
                     Add to Cart
                 </a>
                 <a href="#">
-                    <img src="{{ Storage::url('public/defaults/img/shirts/mc.jpg') }}"/>
+                    <img src="{{ url('images', $shirt->image) }}"/>
                 </a>
             </div>
             <a href="{{ route('shirt_path') }}">
                 <h3>
-                    Kickin with Kraken Tee
+                    {{ $shirt->name }}
                 </h3>
             </a>
             <h5>
-                $19.99
+                ${{$shirt->price}}
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
+                {{ $shirt->description }}
             </p>
         </div>
     </div>
-    <div class="small-3 columns">
-        <div class="item-wrapper">
-            <div class="img-wrapper">
-                <a class="button expanded add-to-cart">
-                    Add to Cart
-                </a>
-                <a href="#">
-                    <img src="{{ Storage::url('public/defaults/img/shirts/shirt-102.jpg') }}"/>
-                </a>
-            </div>
-            <a href="#">
-                <h3>
-                    Kickin with Kraken Tee
-                </h3>
-            </a>
-            <h5>
-                $19.99
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
-            </p>
-        </div>
-    </div>
-    <div class="small-3 columns">
-        <div class="item-wrapper">
-            <div class="img-wrapper">
-                <a class="button expanded add-to-cart">
-                    Add to Cart
-                </a>
-                <a href="#">
-                    <a href="#">
-                    <img src="{{ Storage::url('public/defaults/img/shirts/shirt-108.jpg') }}"/>
-                </a>
-                </a>
-            </div>
-            <a href="#">
-                <h3>
-                    Kickin with Kraken Tee
-                </h3>
-            </a>
-            <h5>
-                $19.99
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
-            </p>
-        </div>
-    </div>
-    <div class="small-3 columns">
-        <div class="item-wrapper">
-            <div class="img-wrapper">
-                <a class="button expanded add-to-cart">
-                    Add to Cart
-                </a>
-                <a href="#">
-                    <img src="{{ Storage::url('public/defaults/img/shirts/shirt-107.jpg') }}"/>
-                </a>
-            </div>
-            <a href="#">
-                <h3>
-                    Kickin with Kraken Tee
-                </h3>
-            </a>
-            <h5>
-                $19.99
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.
-            </p>
-        </div>
-    </div>
+  @endforeach
+    @empty
+    <h5>No products yet</h5>
+    @endforelse
 </div>
 <!-- Footer -->
 <br>

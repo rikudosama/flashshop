@@ -12,6 +12,7 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
+                    <li><a href="{{route('product.index')}}">Products</a></li>
                     <li><a href="{{route('product.create')}}">Add Product</a></li>
                 </ul>
             </li>
