@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'FrontController@index')->name('home_path');
+
 Route::get('/shirts', 'FrontController@shirts')->name('shirts_path');
 Route::get('/shirt', 'FrontController@shirt')->name('shirt_path');
 
@@ -19,6 +20,7 @@ Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout_path');
 
 Route::get('/home', 'HomeController@index');
+Route::resource('/cart', 'CartController');
 
 Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function() {
     Route::get('/', function() {

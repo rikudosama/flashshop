@@ -12,12 +12,14 @@
 .top-bar a:hover{
 	text-decoration: underline;
 }
-
+.welcome{
+  color : #f98;
+}
 
 /*HERO SECTION*/
 section.hero {
     height: 490px;
-    background: #3d3d3d url(../img/mc-mickey1.jpg) center center no-repeat;
+    background: #3d3d3d url(../img/shopping-cart-1275480_1920.jpg) center center no-repeat;
     background-size: cover;
 }
 
