@@ -30,5 +30,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth' ,'admin']], function() {
     Route::resource('/product', 'ProductsController');
     Route::resource('/category', 'CategoriesController');
 });
+Route::resource('address', 'AddressController');
+
 Route::get('/checkout', 'CheckoutController@step1')->name('checkout1_path');
 Route::get('/shipping', 'CheckoutController@shipping')->name('shipping_path');
