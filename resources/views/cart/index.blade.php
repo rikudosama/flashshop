@@ -22,15 +22,17 @@
 			<td width="50px">
 				{!! Form::open(['route'=>['cart.update', $cartItem->rowId], 'method'=>'PUT']) !!}
 				<input type="text" name="qty" value="{{ $cartItem->qty }}">
-				<input type="submit" class="btn btn-success btn-xs" value="Ok">
-				{!! Form::close() !!}
 			</td>
 			<td>
-				{{ $cartItem->options->has('size') ? $cartItem->options->size : '' }}
+				<div>
+					{!! Form::select('size', ['small'=>'small', 'medium'=>'medium', 'large'=>'large'], $cartItem->options->has('size') ? $cartItem->options->size : '' ) !!}
+				</div>
 			</td>
 			<td>
+			<input style="float: left;" type="submit" class="button success small" value="Ok">
+			{!! Form::close() !!}
 				{!! Form::open(['route'=>['cart.destroy', $cartItem->rowId], 'method'=>'DELETE']) !!}
-					{{ Form::submit('Delete', array('class'=>'button')) }}
+					{{ Form::submit('Delete', array('class'=>'button alert small')) }}
 				{!! Form::close() !!}
 			</td>
 		</tr>
@@ -47,7 +49,7 @@
 	  </tr>
 	</tbody>
 </table>
-<a href="#" class="button">Checkout</a>
+<a href="{{ route('checkout1_path') }}" class="button">Checkout</a>
 </div>
 
 @endsection

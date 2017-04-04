@@ -55,7 +55,7 @@
   <div class="row full-width">
     <div class="small-12 medium-4 large-4 columns">
       <i class="fa fa-laptop"></i>
-      <p>Coded with love by Webdevmatics for educational purpose only</p>
+      <p>Coded with love by Lengam Bonaventure for Commercial purpose only</p>
   </div>
   <div class="small-12 medium-4 large-4 columns">
       <i class="fa fa-html5"></i>
