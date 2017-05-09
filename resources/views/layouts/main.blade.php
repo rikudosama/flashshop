@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>
-        @yield('title', 'Shirshop')
+        @yield('title', 'FlashShop')
     </title>
     <link rel="stylesheet" href="{{ asset('/css/font-awesome.min.css') }}"/>
     <link rel="stylesheet" href="{{asset('/css/foundation.min.css')}}"/>
@@ -21,7 +21,7 @@
                 <a href="{{ route('home_path') }}">
                     <i class="fa fa-home fa-lg" aria-hidden="true">
                     </i>
-                    Shirshop
+                    {{ config('app.name', 'Laravel') }}
                 </a>
             </h4>
         </div>
@@ -29,7 +29,7 @@
             <ol class="menu">
                 <li>
                     <a href="{{ route('shirts_path') }}">
-                        SHIRTS
+                        T-SHIRTS
                     </a>
                 </li>
                 <li>
@@ -63,7 +63,7 @@
   </div>
 
   <div class="small-6 medium-4 large-4 columns">
-      <h4>Follow Us</h4>
+      <h4>Suivez nous</h4>
       <ul class="footer-links">
         <li><a href="https://github.com/webdevmatics"><i class="fa fa-github fa-sm" aria-hidden="true"></i> GitHub</a></li>
         <li><a href="#"><i class="fa fa-facebook fa-sm" aria-hidden="true"></i> Facebook</a></li>
@@ -73,7 +73,8 @@
     </div>
 </footer>
 
-<script src="{{asset('dist/js/vendor/jquery.js')}}"></script>
-<script src="{{asset('dist/js/app.js')}}"></script>
+<script src="{{asset('/js/jquery.min.js')}}"></script>
+<script src="{{asset('/js/app.js')}}"></script>
+@include('flashy::message')
 </body>
 </html>

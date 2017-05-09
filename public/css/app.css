@@ -10,7 +10,10 @@
 	color: white;
 }
 .top-bar a:hover{
-	text-decoration: underline;
+	text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  color: #f98;
 }
 .welcome{
   color : #f98;

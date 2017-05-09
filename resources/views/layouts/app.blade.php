@@ -83,6 +83,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="{{asset('/js/jquery.min.js')}}"></script>
+    <script src="{{asset('/js/app.js')}}"></script>
+    @include('flashy::message')
 </body>
 </html>

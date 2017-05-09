@@ -32,6 +32,7 @@
 
 <script src="{{asset('/js/jquery.min.js')}}"></script>
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+@include('flashy::message')
 <script>
     $(document).ready(function () {
         $(".submenu > a").click(function (e) {

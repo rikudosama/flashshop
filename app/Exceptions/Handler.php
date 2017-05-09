@@ -5,6 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use  flashy;
+
 
 class Handler extends ExceptionHandler
 {
@@ -60,6 +62,7 @@ class Handler extends ExceptionHandler
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
-        return redirect()->guest('login');
+        flashy()->error("Vous devez etre connecter !");
+        return redirect()->guest(route('login'));
     }
 }

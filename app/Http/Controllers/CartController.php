@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Flsahy;
+
 
 class CartController extends Controller
 {
@@ -67,6 +69,7 @@ class CartController extends Controller
         $product = Product::find($id);
         Cart::add($id, $product->name, 1, $product->price, ['size'=>'medium']);
 
+        Flashy('Produit ajouté avec succès', 'http://your-awesome-link.com');
         return back();
     }
 
@@ -80,6 +83,8 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         Cart::update($id, ['qty'=>$request->qty, "options"=>['size'=>$request->size]]);
+
+        Flashy('Produit modifié avec succès', 'http://your-awesome-link.com');
         return back();
     }
 
@@ -92,6 +97,8 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
+
+        flashy()->error("Produit supprimé avec succès !");
         return back();
     }
 }
