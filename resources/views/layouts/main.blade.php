@@ -65,9 +65,9 @@
   <div class="small-6 medium-4 large-4 columns">
       <h4>Suivez nous</h4>
       <ul class="footer-links">
-        <li><a href="https://github.com/webdevmatics"><i class="fa fa-github fa-sm" aria-hidden="true"></i> GitHub</a></li>
-        <li><a href="#"><i class="fa fa-facebook fa-sm" aria-hidden="true"></i> Facebook</a></li>
-        <li><a href="https://twitter.com/webdevmatics"><i class="fa fa-twitter fa-sm" aria-hidden="true"></i> Twitter</a></li>
+        <li><a href="https://github.com/rikudosama" target="_blank"><i class="fa fa-github fa-sm" aria-hidden="true"></i> GitHub</a></li>
+        <li><a href="facebook.com/bonaventure.lengam" target="_blank"><i class="fa fa-facebook fa-sm" aria-hidden="true"></i> Facebook</a></li>
+        <li><a href="https://twitter.com/lerikudosama" target="_blank"><i class="fa fa-twitter fa-sm" aria-hidden="true"></i> Twitter</a></li>
         <ul>
         </div>
     </div>
